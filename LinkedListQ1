@@ -1,1 +1,2 @@
-//Create a Linked List. Add a node at the front of the linked list (value should be given by the user)
+// Create a Linked List. Add a node at the front of the linked list (value should be given by the user)
+// If the given LL is C->H->R->O->M->A->T->I->C, the new LL should be A->C->H->R->O->M->A->T->I->C
