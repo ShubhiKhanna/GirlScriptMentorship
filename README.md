@@ -1,4 +1,4 @@
-# GirlScriptMentorship
+# GirlScript Mentorship
 A set of questions for mentees to solve throughout the Mentorship Program
 
 Hello Mentees! 
