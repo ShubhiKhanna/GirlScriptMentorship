@@ -1,3 +1,0 @@
-//Given a linked list, determine if it is a palindrome.
-//If the LL is a->i->b->o->h->p->h->o->b->i->a, print "Yes"
-//What is the time complexity of your code?
