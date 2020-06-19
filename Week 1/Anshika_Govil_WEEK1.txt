@@ -1,0 +1,98 @@
+WEEK 1 – TIME COMPLEXITY
+BY – ANSHIKA GOVIL
+
+Interview Bit:-
+
+Q. LOOP_CMPL
+A. Option C – O(N+M) time, O(1) space
+
+Q. NESTED_CMPL
+A. Option A – O(N*N) time, O(1) space
+
+Q. NESTED_CMPL2
+A. Option D – O(N*N)
+
+Q. CHOOSE4
+A. Option B – X will always be a better choice for large inputs
+
+Q. WHILE_CMPL
+A.  Option D – O(logN)
+
+Q. NESTED_CMPL3
+A. Option D – O(N)
+
+Q. LOOP_CMPL2
+A. Option B – O(nlogn)
+
+Q. GCD_CMPL
+A. Option A – O(logN)
+
+Q. CHOOSE1
+A. Option C – n^3/(sqrt(n))
+
+Q. CHOOSE3
+A. Option C – for(i=1;i<n;i*=2)
+
+Q. CHOOSE2
+A. Option A – f3,f2,f4,f1
+
+Q. REC_CMPL1
+A. Option D – O(N)
+
+Q. REC_CMPL2
+A. Option A – O(2^(R+C))
+
+Q. REC_CMPL3
+A. Option B – O(R*C)
+
+Q. AMORTIZED1
+A. Option A – O(N)
+
+
+
+
+
+
+
+
+
+GEEKS FOR GEEKS:-
+
+A.1  Option 3 - O(N + M) time, O(1) space
+A.2 Option 4 – O(N*N)
+A.3 Option 2 – O(NlogN)
+A.4 Option 2 – X will be a better choice for large inputs
+A. 5 Option 4 – O(logN)
+
+
+GATE QUESTIONS:-
+
+A.1 Option C – O(n)
+A.2 Option B – Theta(n^2)
+A.3 Option D – 2T(n-1) + 1
+A.4 Option C – C
+A.5 Option C – n^3/(sqrt(n))
+A.6 Option A – f3,f2,f4,f1
+A.7 Option A - n = D1D2….Dm-i and rev = DmDm-1…Dm-i+1
+A.8 Option A – O(N)
+A.9 Option C – for(i=1;i<n;i*=2)
+A.10 Option A -  True
+A.11 Option B - X will be a better choice for all inputs except possibly small inputs
+A.12 Option D – Theta(n^3)
+A.13 Option D – D
+A.14 Option A – A
+A.15 Option D – f(n) is O(g(n))
+A.16 Option A – I and II
+A.17 Option A – a
+A.18 Option B – B 
+A.19 Option B - O(n) for fun1() and O(2^n) for fun2()
+A.20 Option D – FLOOR(logN) + 1
+A.21 Option C – C
+A.22 Option A -  148
+A.23 Option C - One-sixth of the product of the 3 consecutive integers.
+A.24 Option B – O(n)
+A.25 Option B – O(n)
+A.26 Option D - independent of the storage scheme
+A.27 Option C – theta(n)
+A.28 Option A - 2n + 1– n – 2
+A.29 Option A – 1 and 2
