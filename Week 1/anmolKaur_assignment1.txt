@@ -1,0 +1,457 @@
+Week 1- Time Complexity 
+ASSIGNMENT
+
+a)Geeks for Geeks (https://www.geeksforgeeks.org/practice-questions-time-complexity-analysis/)
+
+1. What is the time, space complexity of following code:
+int a = 0, b = 0; 
+for (i = 0; i < N; i++) { 
+    a = a + rand(); 
+} 
+for (j = 0; j < M; j++) { 
+    b = b + rand(); 
+} 
+
+Options:
+    1. O(N * M) time, O(1) space
+    2. O(N + M) time, O(N + M) space
+    3. O(N + M) time, O(1) space
+    4. O(N * M) time, O(N + M) space
+
+Answer: 
+option 3; as the first loop is O(N) and the second loop is O(M). As the final time complexity is of the greatest function i.e. maximum of N and M which is O(N + M). Space complexity is O(1) as no additional space is being utilised.
+
+2. What is the time complexity of following code:
+int a = 0; 
+for (i = 0; i < N; i++) { 
+    for (j = N; j > i; j--) { 
+        a = a + i + j; 
+    } 
+} 
+
+Options:
+    1. O(N)
+    2. O(N*log(N))
+    3. O(N * Sqrt(N))
+    4. O(N*N)
+
+answer: option 4 i.e. O(N*N)
+the time complexity of outer loop is O(N) => time complexity of statements within that loop is also O(n) but the inner loop also has time complexity of O(N) * O(N) = O(N*N).
+ 
+3. What is the time complexity of following code:
+int i, j, k = 0; 
+for (i = n / 2; i <= n; i++) { 
+    for (j = 2; j <= n; j = j * 2) { 
+        k = k + n / 2; 
+    } 
+} 
+
+Options:
+    1. O(n)
+    2. O(nLogn)
+    3. O(n^2)
+    4. O(n^2Logn)
+
+answer: time complexity of outer loop is O(N). time complexity of inner loop is O(n * logn) thus time complexity of the code is maximum of two which is O(nlogn)
+
+
+
+4. What does it mean when we say that an algorithm X is asymptotically more efficient than Y?
+Options:
+    1. X will always be a better choice for small inputs
+    2. X will always be a better choice for large inputs
+    3. Y will always be a better choice for small inputs
+    4. X will always be a better choice for all inputs
+
+answer: 2. X will always be a better choice for large inputs
+
+5. What is the time complexity of following code:
+int a = 0, i = N; 
+while (i > 0) { 
+    a += i; 
+    i /= 2; 
+} 
+
+Options:
+    1. O(N)
+    2. O(Sqrt(N))
+    3. O(N / 2)
+    4. O(log N)
+answer: option 4; O(log N) 
+
+
+b)  GATE Questions (http://learnccoding.blogspot.com/2015/01/gate-question-based-on-time-complexity.html)
+
+1. What is time complexity of fun()?
+int fun(int n)
+{
+  int count = 0;
+  for (int i = n; i > 0; i /= 2)
+     for (int j = 0; j < i; j++)
+        count += 1;
+  return count;
+}
+ 
+Answer: the inner loop runs for n/2 times, then n/4, then n/8 so on.. till 1 (n+ n/2 + n/4 + ...... + 1) therefore it is O(n)
+ 
+
+Question 2)
+
+int fun(int n) 
+{ 
+  int count = 0; 
+  for (int i = 0; i < n; i++) 
+     for (int j = i; j > 0; j--) 
+        count = count + 1; 
+  return count; 
+}  
+
+
+answer: O(N^2) {as for outer loop it is O(N) and for inner it is O(N)*O(N). or the count +=1 statement is printed for 0+1+2+3+4+.....+n-1 times= n(n-1)/2
+
+question 3)
+
+The recurrence relation capturing the optimal time of the Tower of Hanoi problem with n discs is. 
+Answer: T(n) = 2T(n – 1) + 1
+
+question 4) Let w(n) and A(n) denote respectively, the worst case and average case running time of an algorithm executed on an input of size n. which of the following is ALWAYS TRUE? 
+
+Answer:  
+The worst case time complexity is always greater than or same as the average case time complexity. 
+W(n) >= A(n)
+=> O(W(n))= A(n)
+
+question: 
+Which of the following is not O(n^2)?
+
+A (15^10) * n + 12099
+B n^1.98
+C n^3 / (sqrt(n))
+D (2^20) * n
+
+answer: option c because n3 / sqrt(n) = n^5/2 which is n^2.5 > n^2 for all n > 1 therefore it is not O(n^2)
+whereas other options at some points there value is less than n^2.
+
+Question: Which of the given options provides the increasing order of asymptotic complexity of functions f1, f2, f3 and f4? 
+   f1(n) = 2^n
+   f2(n) = n^(3/2) 
+   f3(n) = nLogn
+   f4(n) = n^(Logn)
+Answer: f3, f2, f4, f1 
+
+question: 
+Consider the following program fragment for reversing the digits in a given integer to obtain a new integer. Let n = D1D2…Dm
+ int n, rev;  
+rev = 0;  
+while (n > 0)  
+{  
+   rev = rev*10 + n%10;  
+   n = n/10;  
+}
+
+The loop invariant condition at the end of the ith iteration is: (GATE CS 2004)
+(A) n = D1D2….Dm-i and rev = DmDm-1…Dm-i+1
+(B) n = Dm-i+1…Dm-1Dm and rev = Dm-1….D2D1
+(C) n != rev
+(D) n = D1D2….Dm and rev = DmDm-1…D2D1
+
+answer: A 
+We can get it by taking an example like n = 54321. After 2 iterations, rev would be 12 and n would be 543. 
+
+question: What is the time complexity of the below function? 
+void fun(int n, int arr[])
+{
+    int i = 0, j = 0;
+    for(; i < n; ++i)
+        while(j < n && arr[i] < arr[j])
+            j++;
+}
+answer: O(n)
+the variable j is not initialized for each value of variable i. So, the inner loop runs at most n times
+there is difference in these two codes
+void fun(int n, int arr[]) 
+{ 
+    int i = 0, j = 0; 
+    for(; i < n; ++i) 
+    { 
+        j = 0; 
+        while(j < n && arr[i] < arr[j]) 
+            j++; 
+    } 
+} 
+the second one would have time complexity of O(n^2)
+because the inner loop will also have time complexity of O(n) 
+
+question: In a competition, four different functions are observed. All the functions use a single for loop and within the for loop, same set of statements are executed. Consider the following for loops: 
+
+A) for(i = 0; i < n; i++) 
+  
+B) for(i = 0; i < n; i += 2) 
+  
+C) for(i = 1; i < n; i *= 2) 
+  
+D) for(i = n; i > -1; i /= 2)
+
+answer: C
+The time complexity of first for loop is O(n).
+The time complexity of second for loop is O(n/2), equivalent to O(n) in asymptotic analysis.
+The time complexity of third for loop is O(logn).
+The fourth for loop doesn’t terminate.
+
+Question: 
+The following statement is valid.
+log(n!) = (n log n).
+(A) True
+(B) False
+answer: A true; because 
+    log(1*1*1....) <= log(n!) <= log(n*n*n*....)
+log(1) < = log(n!) <= log(n^n)
+ => log(n!) <= n(logn)
+
+
+question: What does it mean when we say that an algorithm X is asymptotically more efficient than Y? 
+Answer: X will be a better choice for all inputs except possibly small inputs 
+
+
+
+question: Consider the following functions:
+  f(n)   = 2^n
+  g(n)   = n!
+  h(n)   = n^logn 
+answer: According to order of growth: h(n) < f(n) < g(n) 
+
+(g(n) is asymptotically greater than f(n) and f(n) is asymptotically greater than h(n) )
+
+=>  h(n) =  O(f(n));  g(n) = Omega (f(n)) 
+
+
+question:  In the following C function, let n >= m.
+int gcd(n,m)
+{
+  if (n%m ==0) return m;  
+  n = n%m;
+  return gcd(m, n);
+
+
+}
+
+
+How many recursive calls are made by this function? 
+
+Answer: theta(log(n))
+
+
+question:
+Consider the following functions
+
+Which of the following is true? 
+Answer:  f(n) is 0(g(n))
+ f(n) and g(n) are of same asymptotic order and following statements are true.
+f(n) = O(g(n))
+g(n) = O(f(n))
+
+(a) and (b) are false because n! is of asymptotically higher order than n^(sqrt n)
+
+
+
+question: Consider the following three claims
+I (n + k)^m = theta (n^m), where k and m are constants
+II 2^(n + 1) = 0 (2^n)
+III 2^(2n + 1) = 0 (2^n)
+Which of these claims are correct?  
+
+Answer: claim one and two are correct 
+because:-
+(I)  (n+m)^k = n^k + c1*n^(k-1) + ... k^m = theta (n^k)
+(II)  2^(n+1) = 2*2^n = O(2^n)
+
+question: Let s be a sorted array of n integers. Let t(n) denote the time taken for the most efficient algorithm to determined if there are two elements with sum less than 1000 in s. which of the following statements is true?  
+Answer: t (n) is 0 (1)
+Let array be sorted in ascending order, if sum of first two elements is less than 1000 then there are  two elements with sum less than 1000 otherwise not. For array sorted in descending order we need to check last two elements. For an array data structure, number of operations are fixed in both the cases and not dependent on n, complexity is O(1) 
+question: 
+int unknown(int n) {
+    int i, j, k = 0;
+    for (i  = n/2; i <= n; i++)
+        for (j = 2; j <= n; j = j * 2)
+            k = k + n/2;
+    return k;
+ }
+What is the returned value of the above function? 
+Answer: theta(nlogn)
+
+Consider the following two functions. What are time complexities of the functions? 
+
+int fun1(int n)
+{
+    if (n <= 1) return n;
+    return 2*fun1(n-1);
+}
+
+int fun2(int n)
+{
+    if (n <= 1) return n;
+    return fun2(n-1) + fun2(n-1);
+}
+
+
+answer: O(n) for fun1() and O(2^n) for fun2() 
+Time complexity of fun1() can be written as
+T(n) = T(n-1) + C which is O(n)
+Time complexity of fun2() can be written as
+T(n) = 2T(n-1) + C which is O(2^n)
+
+question: int j, n;
+  j = 1;
+  while (j <= n)
+        j = j*2; 
+The number of comparisons made in the execution of the loop for any n > 0 is: Base of Log is 2 in all options. 
+Answer: FLOOR(logn) + 1    (floor => left hand value)
+
+
+question: for (i = n, j = 0; i >0; i /= 2, j += i); 
+Consider the following C-program fragment in which i, j and n are integer variables. 
+Let val(j) denote the value stored in the variable j after termination of the for loop. Which one of the following is true? 
+
+
+Answer: val(j) = theta (n) ; j = n/2 + n/4 + n/8 + .. + 1 = theta(n) 
+
+
+
+question:
+Consider the following pseudo code. What is the total number of multiplications to be performed?
+D = 2
+for i = 1 to n do
+   for j = i to n do
+      for k = j + 1 to n do
+           D = D * 3 
+answer:
+One-sixth of the product of the 3 consecutive integers. 
+The total number of multiplications to be performed will be equal to the number of times the inner-most loop executes , ie , the loop with 'k' as the counter variable.
+When i=1, j=1, then the 'k' loop executes (n-1) times
+i=1 , j=2 , => (n-2) times
+....
+=> for i=1 , the no of multiplications is = (n-1) + (n-2) + .... + 2 + 1 = ?(n-1)
+for i=2 , similarly , the no of multiplications = ?(n-2)
+...
+for i=n-1 , the no of multiplications = ?1 = 1
+Hence , the total no of multiplications is = ?(n-1) + ?(n-2) + .... + ?(2) + ?(1)
+=(1+2+... +n-1) + (1+2+...+n-2) + .... + (2+1) + (1)
+=Sn-1 + Sn-2 + ... + S2 + S1
+=?Si (from i=1 to n-1)
+=?[n*(n-1)/2]
+=?[(n2)/2] - ?[(n)/2]
+= (n)(n+1)(2n+1)12?n(n+1)4=(n?1)(n)(n+1)6
+
+question: consider the following code 
+double foo (int n) 
+{ 
+    int i; 
+    double sum; 
+    if (n = = 0) return 1.0; 
+    else
+    { 
+        sum = 0.0; 
+        for (i = 0; i < n; i++) 
+            sum += foo (i); 
+        return sum; 
+    } 
+} 
+
+The space complexity of the above function is: 
+answer: 
+O(n) . function foo() is recursive. Space complexity is O(n) as there can be at most O(n) active functions (function call frames) at a time. 
+
+Question:
+Consider the following C-function: 
+
+double foo (int n) 
+{ 
+    int i; 
+    double sum; 
+    if (n = = 0) return 1.0; 
+    else
+    { 
+        sum = 0.0; 
+        for (i = 0; i < n; i++) 
+            sum += foo (i); 
+        return sum; 
+    } 
+} 
+
+Suppose we modify the above function foo() and store the values of foo (i), 0 < = i < n, as and when they are computed. With this modification, the time complexity for function foo() is significantly reduced. The space complexity of the modified function would be: 
+
+answer:
+
+O(n).An array of size n would be required to store temporary results so O(n)
+
+{We would need an array of size O(n). The space required for recursive calls would be O(1) as the values would be taken from stored array rather than making function calls again and again.
+} 
+
+question: Two matrices M1 and M2 are to be stored in arrays A and B respectively. Each array can be stored either in row-major or column-major order in contiguous memory locations. The time complexity of an algorithm to compute M1 × M2 will be 
+(A) best if A is in row-major, and B is in column- major order
+(B) best if both are in row-major order
+(C) best if both are in column-major order
+(D) independent of the storage scheme
+
+answer: (D)
+
+for time complexity, it doesn’t matter how we store array elements, we always need to access same number of elements of M1 and M2 to multiply the matrices. It is always constant or O(1) time to do element access in arrays, the constants may differ for different schemes, but not the time complexity. 
+
+Question: Let A[1, …, n] be an array storing a bit (1 or 0) at each location, and f(m) is a function whose time complexity is ?(m). Consider the following program fragment written in a C like language: 
+
+counter = 0; 
+for (i = 1; i < = n; i++) 
+{ 
+	if (A[i] == 1) 
+		counter++; 
+	else { 
+		f(counter); 
+		counter = 0; 
+	} 
+}
+
+The complexity of this program fragment is: 
+
+answer:  theta(n)
+
+ Consider the following cases:
+a) All 1s in A[]: Time taken is ?(n) as
+                  only counter++ is executed n times.
+
+b) All 0s in A[]: Time taken is ?(n) as
+                  only f(0) is called n times
+
+c) Half 1s, then half 0s: Time taken is  ?(n) as
+                  only f(n/2) is called once.
+
+Question: The recurrence equation
+T(1) = 1
+T(n) = 2T(n - 1) + n, n ? 2
+evaluates to
+(A) 2n + 1– n – 2
+(B) 2n – n
+(C) 2n + 1 – 2n – 2
+(D) 2n + n 
+answer: using hit and try method.
+Given T(n) = 2T(n-1) + n and T(1) = 1
+
+For n = 2, T(2) = 2T(2-1) + 2 
+                = 2T(1) + 2 
+                = 2.1 + 2 = 4
+
+Now when you will put n = 2 in all options, 
+only 1st option 2^(n+1) - n - 2 satisfies it. 
+
+Question: Consider the following three claims
+1. (n + k)m = ?(nm), where k and m are constants
+2. 2n + 1 = O(2n)
+3. 22n + 1 = O(2n) 
+Which of these claims are correct ? 
+Answer: 1 and 2
+
+c) Interview-Bit (https://www.interviewbit.com/courses/programming/topics/time-complexity/ )
+
+completed all except two questions (topic- function calling itself)
+
+*****-----------------------------------------------------------------*****
+DOUBTS: Tower of Hanoi, Master Theorem(recurrence relation), Floyd-Washall Algorithm
